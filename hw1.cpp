@@ -1,30 +1,7 @@
-//cs335 Spring 2015 Lab-1
-//This program demonstrates the use of OpenGL and XWindows
-//
-//Assignment is to modify this program.
-//You will follow along with your instructor.
-//
-//Elements to be learned in this lab...
-//
-//. general animation framework
-//. animation loop
-//. object definition and movement
-//. collision detection
-//. mouse/keyboard interaction
-//. object constructor
-//. coding style
-//. defined constants
-//. use of static variables
-//. dynamic memory allocation
-//. simple opengl components
-//. git
-//
-//elements we will add to program...
-//. Game constructor
-//. multiple particles
-//. gravity
-//. collision detection
-//. more objects
+//lizandro perez
+//prof gordon
+//cs335
+//hw1
 //
 #include <iostream>
 #include <cstdlib>
@@ -115,13 +92,6 @@ int main(void)
 	init_opengl();
 	//declare game object
 	Game game;
-	game.n=0;
-
-	//declare a box shape
-	game.box.width = 100;
-	game.box.height = 10;
-	game.box.center.x = 120 + 5*65;
-	game.box.center.y = 500 - 5*60;
 
 	//start animation
 	while(!done) {
@@ -144,7 +114,7 @@ void set_title(void)
 {
 	//Set the window title bar.
 	XMapWindow(dpy, win);
-	XStoreName(dpy, win, "335 Lab1   LMB for particle");
+	XStoreName(dpy, win, "335 Lab1");
 }
 
 void cleanupXWindows(void) {
@@ -332,7 +302,7 @@ void render(Game *game)
     r.left = 10;
     r.center = 0;
     
-    ggprint16(&r, 16, 0x00ff0000, "Waterfall Model");
+    ggprint16(&r, 16, 0xf8f8ff, "Waterfall Model");
 
     const int n=40;
     static int firsttime = 1;
@@ -351,7 +321,7 @@ void render(Game *game)
     }
     
     //drawing circle
-    glColor3ub(255,255,255);
+    glColor3ub(255,20,10);
     glBegin(GL_LINE_LOOP);
     for(int i=0; i<n; i++) {
         glVertex2i(
